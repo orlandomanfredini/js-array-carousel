@@ -6,14 +6,16 @@
 // ma costruito dinamicamente attraverso JavaScript.
 
 
-
+// MILESTONE 3
+// Al click dell'utente sulle frecce, il programma cambierà l’immagine attiva,
+// che quindi verrà visualizzata al posto della precedente.
 
 const arrayStringImg = ['./img/01.webp" alt="', './img/02.webp" alt="', './img/03.webp" alt="', './img/04.webp" alt="', './img/05.webp" alt="']
 
 const sliderContainer = document.querySelector('.slider-img')
 for(let i = 0; i < arrayStringImg.length; i++){
 
-    
+
      
     sliderContainer.innerHTML += 
      `<div class="item">
@@ -24,8 +26,25 @@ for(let i = 0; i < arrayStringImg.length; i++){
 }
     
 
-let activeImg = document.querySelector('.item')
-activeImg.classList.add('active')
+let arrayItemElement = document.getElementsByClassName('item'); //array element dom
+let activeImg = 0
+arrayItemElement[activeImg].classList.add('active')
+
+
+const next = document.querySelector('.next')
+next.addEventListener('click',  function(){
+        arrayItemElement[activeImg].classList.remove('active')
+        activeImg++
+        arrayItemElement[activeImg].classList.add('active')
+})
+
+
+const prev = document.querySelector('.prev')
+prev.addEventListener('click', function(){
+        arrayItemElement[activeImg].classList.remove('active')
+        activeImg--
+        arrayItemElement[activeImg].classList.add('active')
+})
 
 
 
