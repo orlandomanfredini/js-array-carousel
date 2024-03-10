@@ -5,10 +5,15 @@
 // Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella milestone 1,
 // ma costruito dinamicamente attraverso JavaScript.
 
+
+
+
 const arrayStringImg = ['./img/01.webp" alt="', './img/02.webp" alt="', './img/03.webp" alt="', './img/04.webp" alt="', './img/05.webp" alt="']
 
 const sliderContainer = document.querySelector('.slider-img')
 for(let i = 0; i < arrayStringImg.length; i++){
+
+    
      
     sliderContainer.innerHTML += 
      `<div class="item">
@@ -16,11 +21,6 @@ for(let i = 0; i < arrayStringImg.length; i++){
      </div>`
 
     
-     
-     
-     
-    
-
 }
     
 
