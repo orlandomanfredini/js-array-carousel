@@ -16,14 +16,17 @@ const sliderContainer = document.querySelector('.slider-img')
 for(let i = 0; i < arrayStringImg.length; i++){
 
 
-     
-    sliderContainer.innerHTML += 
+     sliderContainer.innerHTML += 
      `<div class="item">
      <img src="${arrayStringImg[i]}">
      </div>`
 
     
 }
+
+// BONUS 1:
+// Aggiungere il ciclo infinito del carosello. Ovvero se è attiva la prima immagine e 
+// l'utente clicca la freccia per andare all’immagine precedente, dovrà comparire l’ultima immagine dell’array e viceversa.
     
 
 let arrayItemElement = document.getElementsByClassName('item'); //array element dom
@@ -36,6 +39,8 @@ next.addEventListener('click',  function(){
         arrayItemElement[activeImg].classList.remove('active')
         activeImg++
         arrayItemElement[activeImg].classList.add('active')
+
+       
 })
 
 
@@ -44,7 +49,11 @@ prev.addEventListener('click', function(){
         arrayItemElement[activeImg].classList.remove('active')
         activeImg--
         arrayItemElement[activeImg].classList.add('active')
-})
+        
+                
+        
+
+        })
 
 
 
