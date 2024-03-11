@@ -36,10 +36,19 @@ arrayItemElement[activeImg].classList.add('active')
 
 const next = document.querySelector('.next')
 next.addEventListener('click',  function(){
+        
+        if(activeImg < arrayItemElement.length - 1)
         arrayItemElement[activeImg].classList.remove('active')
         activeImg++
-        arrayItemElement[activeImg].classList.add('active')
+        
 
+        if(activeImg === arrayItemElement.length){
+            arrayItemElement[4].classList.remove('active')
+            activeImg = 0
+            
+        }
+        
+        arrayItemElement[activeImg].classList.add('active')
        
 })
 
@@ -48,8 +57,13 @@ const prev = document.querySelector('.prev')
 prev.addEventListener('click', function(){
         arrayItemElement[activeImg].classList.remove('active')
         activeImg--
-        arrayItemElement[activeImg].classList.add('active')
         
+        if(activeImg < 0){
+            arrayItemElement[0].classList.remove('active')
+            activeImg = 4
+        }
+
+        arrayItemElement[activeImg].classList.add('active')
                 
         
 
