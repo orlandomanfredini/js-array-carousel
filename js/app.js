@@ -37,7 +37,6 @@ arrayItemElement[activeImg].classList.add('active')
 const next = document.querySelector('.next')
 next.addEventListener('click',  function(){
         
-        if(activeImg < arrayItemElement.length - 1)
         arrayItemElement[activeImg].classList.remove('active')
         activeImg++
         
